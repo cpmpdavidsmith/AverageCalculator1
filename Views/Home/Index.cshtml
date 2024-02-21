@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Calculate Average</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <h1>Calculate Average</h1>
+    <form method="post" asp-action="CalculateAverage">
+        <label for="number1">Number 1:</label>
+        <input type="number" id="number1" name="number1" required />
+        <br /><br />
+        <label for="number2">Number 2:</label>
+        <input type="number" id="number2" name="number2" required />
+        <br /><br />
+        <label for="average">Average:</label>
+        <input type="number" id="average" name="average" readonly />
+        <br /><br />
+        <button type="submit">Calculate Average</button>
+    </form>
+    @if (ViewBag.Average != null)
+    {
+        <script>
+            document.getElementById('average').value = @ViewBag.Average;
+        </script>
+    }
+</body>
+</html>
+
